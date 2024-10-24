@@ -1,0 +1,32 @@
+pipeline{
+    agent { docker { image 'python:3.13.0-alpine3.20' } }
+    triggers {
+        pollSCM '*/5 * * * *'
+    }
+    stages{
+        stage('Build'){
+            steps{
+                echo 'From Build'
+                sh '''
+                    echo Multiline Text from build text
+                '''    
+            }
+        }
+        stage('Test'){
+            steps{
+                echo 'From Test'
+                sh '''
+                    echo Multiline Text from test text
+                ''' 
+            }
+        }
+        stage('deploy'){
+            steps{
+                echo 'From Deploy'
+                sh '''
+                    echo Multiline Text from deploy text
+                ''' 
+            }
+        }
+    }
+}
