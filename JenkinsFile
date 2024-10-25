@@ -20,16 +20,15 @@ pipeline{
                     echo Multiline Text from test text
                 ''' 
                 sh '''
-                    python3 - <<EOF
-                    # Python script starts here
-                    print("Hello from Python Script!")
-                    
-                    # Example logic in Python
-                    def greet(name):
-                        return f"Hello, {name}!"
+                    python3 - << EOF
+print("Hello from Python Script!")
 
-                    print(greet("Thejas"))
-                    EOF
+# Example logic in Python
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("Thejas"))
+EOF
                 '''
             }
         }
