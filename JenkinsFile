@@ -35,7 +35,6 @@ pipeline{
                 to: 'thejaskala308@gmail.com',
                 subject: 'Email From Jenkins Pipeline', 
                 mimeType: 'text/html',
-                body: 'Hello, This is an email from Jenkins pipeline.',
                 body: '''
                     <html>
                     <head>
