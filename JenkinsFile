@@ -3,6 +3,10 @@ pipeline{
     triggers {
         pollSCM '* * * * *'
     }
+    environment{
+        TOUSERNAME = 'thejaskala308@gmail.com'
+        MIMETYPE = 'text/html'
+    }
     stages{
         stage('Build'){
             steps{
@@ -61,9 +65,9 @@ EOF
 
 def sendEmail(body){
     mail(
-        to: 'thejaskala308@gmail.com',
+        to: ${TOUSERNAME},
         subject: 'Email From Jenkins Pipeline', 
-        mimeType: 'text/html',
+        mimeType: ${MIMETYPE},
         body: body
     )
 }
