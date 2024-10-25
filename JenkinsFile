@@ -75,7 +75,7 @@ pipeline{
                         <div class="content">
                             <p>Hello,</p>
                             <p>This is a sample HTML email sent from a Jenkins pipeline with CSS styling.</p>
-                            <p>Your Project name is ${env.PROJECT_NAME} - Build ${env.BUILD_NUMBER} - Status : ${currentBuild.currentResult}</p>
+                            <p>Your Project name is ${env.JOB_NAME} - Build ${env.BUILD_NUMBER} - Status : ${currentBuild.currentResult}</p>
                         </div>
                         <div class="footer">
                             <p>Sent from Jenkins CI</p>
