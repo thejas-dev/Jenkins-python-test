@@ -43,11 +43,15 @@ EOF
                     echo Multiline Text from deploy text
                 ''' 
                 script{
-                    def jsonString = '{"name":"thejas hari","age":5}'
+                    def jsonString = '{"name":"Hari","age":5}'
                     def jsonObj = readJSON text: jsonString
 
                     echo "${jsonObj.name}"
                     echo "${jsonObj.age}"
+
+                    def jsonUser = readFile('test.json')
+                    echo "${jsonUser.name}"
+                    echo "${jsonUser.age}"
                 }
             }
         }
