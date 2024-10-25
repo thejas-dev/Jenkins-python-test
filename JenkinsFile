@@ -65,9 +65,9 @@ EOF
 
 def sendEmail(body){
     mail(
-        to: ${TOUSERNAME},
+        to: "${TOUSERNAME}",
         subject: 'Email From Jenkins Pipeline', 
-        mimeType: ${MIMETYPE},
+        mimeType: "${MIMETYPE}",
         body: body
     )
 }
