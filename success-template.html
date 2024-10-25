@@ -37,7 +37,7 @@
         <div class="content">
             <p>Hello,</p>
             <p>This is a email notifiction sent from a ${env.JOB_NAME} pipeline to mention the current build status is <b style="color: green;" >success</b>.</p>
-            <p>Your Job name is ${env.JOB_NAME} - Build $BUILD_NUMBER - Status : ${currentBuild.currentResult}</p>
+            <p>Your Job name is ${env.JOB_NAME} - Build ${BUILD_NUMBER} - Status : ${currentBuild.currentResult}</p>
         </div>
         <div class="footer">
             <p>Sent from Jenkins CI</p>

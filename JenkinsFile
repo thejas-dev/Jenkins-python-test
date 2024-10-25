@@ -45,12 +45,14 @@ EOF
         success{
             script{
                 def emailBody = readFile('success-template.html')
+                emailBody = replaceVariables(emailBody)
                 sendEmail(emailBody)
             }   
         }
         failure{
             script{
                 def emailBody = readFile('failure-template.html')
+                emailBody = replaceVariables(emailBody)
                 sendEmail(emailBody)
             }
         }
@@ -64,4 +66,11 @@ def sendEmail(body){
         mimeType: 'text/html',
         body: body
     )
+}
+
+def replaceVariables(template){
+    return template
+    .replaceAll('\\${BUILD_NUMBER}',env.BUILD_NUMBER)
+    .replaceAll('\\${env.JOB_NAME}',env.JOB_NAME)
+    .replaceAll('\\${currentBuild.currentResult}',currentBuild.currentResult)
 }
