@@ -49,7 +49,7 @@ EOF
                     echo "${jsonObj.name}"
                     echo "${jsonObj.age}"
 
-                    def jsonUser = readFile('test.json')
+                    def jsonUser = readJSON file: 'test.json'
                     echo "${jsonUser.name}"
                     echo "${jsonUser.age}"
                 }
