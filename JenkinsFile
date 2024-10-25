@@ -70,7 +70,7 @@ def sendEmail(body){
 
 def replaceVariables(template){
     return template
-    .replaceAll('\\${BUILD_NUMBER}',env.BUILD_NUMBER)
-    .replaceAll('\\${env.JOB_NAME}',env.JOB_NAME)
-    .replaceAll('\\${currentBuild.currentResult}',currentBuild.currentResult)
+    .replaceAll('\\$BUILD_NUMBER',env.BUILD_NUMBER)
+    .replaceAll('\\$env.JOB_NAME',env.JOB_NAME)
+    .replaceAll('\\$currentBuild.currentResult',currentBuild.currentResult)
 }
