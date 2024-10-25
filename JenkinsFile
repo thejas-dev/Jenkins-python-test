@@ -29,4 +29,9 @@ pipeline{
             }
         }
     }
+    post{
+        always{
+            mail bcc: '', body: 'Hello, This is an email from jenkins pipeline.', cc: '', from: '', replyTo: '', subject:​​ 'EmailJenkinsPipeline', to: 'thejaskala308@gmail.com'
+        }
+    }
 }
