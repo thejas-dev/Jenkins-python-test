@@ -35,7 +35,7 @@ pipeline{
                 to: 'thejaskala308@gmail.com',
                 subject: 'Email From Jenkins Pipeline', 
                 mimeType: 'text/html',
-                body: '''
+                body: """
                     <html>
                     <head>
                         <style>
@@ -75,15 +75,15 @@ pipeline{
                         <div class="content">
                             <p>Hello,</p>
                             <p>This is a sample HTML email sent from a Jenkins pipeline with CSS styling.</p>
+                            <p>Your Project name is ${PROJECT_NAME} - Build ${BUILD_NUMBER} - ${BUILD_STATUS}</p>
                         </div>
                         <div class="footer">
                             <p>Sent from Jenkins CI</p>
-                            <p>Your Project name is $PROJECT_NAME - Build $BUILD_NUMBER - $BUILD_STATUS</p>
                         </div>
                         </div>
                     </body>
                     </html>
-                '''
+                """
             )
         }
     }
