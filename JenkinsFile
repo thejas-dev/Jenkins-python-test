@@ -9,7 +9,8 @@ pipeline{
                 echo 'From Build'
                 sh '''
                     echo Multiline Text from build text
-                '''    
+                ''' 
+                sh 'python3 test.py'   
             }
         }
         stage('Test'){
@@ -18,6 +19,18 @@ pipeline{
                 sh '''
                     echo Multiline Text from test text
                 ''' 
+                sh '''
+                    python3 - <<EOF
+                    #Python Script
+                    print("Hello world from python script from test stage")
+
+                    #Function
+                    def hello(username):
+                        return f"Hello, {username}"
+                    
+                    print(hello("Thejas Hari"))
+                    EOF
+                '''
             }
         }
         stage('deploy'){
