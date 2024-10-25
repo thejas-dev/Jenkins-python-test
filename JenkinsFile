@@ -78,11 +78,12 @@ pipeline{
                         </div>
                         <div class="footer">
                             <p>Sent from Jenkins CI</p>
+                            <p>Your Project name is $PROJECT_NAME - Build $BUILD_NUMBER - $BUILD_STATUS</p>
                         </div>
                         </div>
                     </body>
                     </html>
-                    '''
+                '''
             )
         }
     }
